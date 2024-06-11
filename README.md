@@ -17,8 +17,15 @@ First we need to execute the following command
 ```
 mvn archetype:generate -DgroupId=edu.escuelaing.arsw.ASE.app -DartifactId=miprimera-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
-This will generate a folder with the following folder
+This will generate a folder with the following folder with it's branches
+
 ![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/32a404db-56d9-4d62-b4e3-fa947c7ba97c)
+
+With the following program
+
+![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/b9db96e4-7471-477a-909e-9474b95ad1e7)
+
+
 
 To be run the following program you need to be in the program directory, once inside type 
 
