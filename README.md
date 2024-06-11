@@ -17,13 +17,16 @@ First we need to execute the following command
 ```
 mvn archetype:generate -DgroupId=edu.escuelaing.arsw.ASE.app -DartifactId=miprimera-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
-This will generate a folder with 
+This will generate a folder with the following folder
+![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/32a404db-56d9-4d62-b4e3-fa947c7ba97c)
 
 To be run the following program you need to be in the program directory, once inside type 
 
 ```
 java -cp target/miprimera-app-1.0-SNAPSHOT.jar edu.escuelaing.arsw.ASE.app.App
 ```
+
+
 
 ## Running the tests
 
