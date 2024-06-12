@@ -32,10 +32,10 @@ public class Loc {
                     if(!line.equals(""))
                     line = analize(line);
                     if(!javadoc){ 
-                        if(!line.equals("")){
+                        if(line.trim().length() > 0){
                             count +=1;
                         }
-                        res.add(line);
+                        res.add(line + count);
                     }
                 }
                 reader.close();
@@ -63,7 +63,7 @@ public class Loc {
                 javadoc = false;
             }else if(comment.matcher(val).matches() || commentb){ 
                 commentb = true;
-                res += "";
+                
 
             }else{
                 res += val + " ";

@@ -67,4 +67,16 @@ class AppTest {
         Exception exception = assertThrows(Exception.class, () -> App.selectFiles(args));
         assertEquals("Argument error, should be \"phy\" or \"loc\" ", exception.getMessage());
     }
+
+    @Test
+    void testFileHasFourLOC() {
+        // Path to the test file
+        String filePath = Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\Test.java").toString();
+        
+        // Calculate lines of code using Loc class
+        String[] lines = Loc.calculate(filePath);
+        
+        // Assert the lines of code count
+        assertEquals(Integer.toString(4), lines[lines.length-1]);
+    }
 }

@@ -43,7 +43,7 @@ public final class App {
      * @param args The arguments of the program.
      * @throws Exception 
      */
-    @SuppressWarnings({ "rawtypes"})
+    @SuppressWarnings({ "rawtypes", "unchecked"})
     public static void main(String[] args) throws Exception {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String xd = System.getProperty("user.dir");
@@ -59,8 +59,13 @@ public final class App {
         files.forEach(System.out::println); 
 
         List resp = Arrays.asList(res);
-        System.out.println("Found file contents: \n"); 
-        //resp.forEach(System.out::println);
-        System.out.println("Lines of code found: " + resp.get(resp.size()-1));
+        if(args[0].equals("phy")){
+            System.out.println("Found file contents: \n");
+            resp.set(resp.size()-1, ""); 
+            resp.forEach(System.out::println);
+        }else{
+            System.out.println("Lines of code found: " + resp.get(resp.size()-1));
+        }
+        
     }
 }
