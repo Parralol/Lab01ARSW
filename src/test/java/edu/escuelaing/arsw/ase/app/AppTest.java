@@ -17,7 +17,7 @@ class AppTest {
     @Test
     void testSelectFiles_phy() throws Exception {
         String[] args = {"phy", "TestFile.java"};
-        String xd = Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\resources\\TestFile.java").toString();
+        String xd = Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\TestFile.java").toString();
         App.allFiles.add(Paths.get(xd));
 
         App.selectFiles(args);
@@ -31,7 +31,7 @@ class AppTest {
     @Test
     void testSelectFiles_loc() throws Exception {
         String[] args = {"loc", "TestFile.java"};
-        String xd = Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\resources\\TestFile.java").toString();
+        String xd = Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\TestFile.java").toString();
         App.allFiles.add(Paths.get(xd));
 
         App.selectFiles(args);
@@ -44,8 +44,8 @@ class AppTest {
     @Test
     void testSelectFiles_throwsExceptionForMultipleFiles() {
         String[] args = {"phy", "TestFile.java"};
-        App.allFiles.add(Paths.get("src/test/resources/TestFile.java"));
-        App.allFiles.add(Paths.get("src/test/resources/another/TestFile.java"));
+        App.allFiles.add(Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\TestFile.java"));
+        App.allFiles.add(Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\TestFile.java"));
 
         Exception exception = assertThrows(Exception.class, () -> App.selectFiles(args));
         assertEquals("There is more than 1 file with the same name", exception.getMessage());
@@ -62,7 +62,7 @@ class AppTest {
     @Test
     void testSelectFiles_throwsExceptionForInvalidArgument() {
         String[] args = {"invalid", "TestFile.java"};
-        App.allFiles.add(Paths.get("src/test/resources/TestFile.java"));
+        App.allFiles.add(Paths.get(System.getProperty("user.dir") + "\\"+ "src\\test\\java\\edu\\escuelaing\\arsw\\ase\\app\\resources\\TestFile.java"));
 
         Exception exception = assertThrows(Exception.class, () -> App.selectFiles(args));
         assertEquals("Argument error, should be \"phy\" or \"loc\" ", exception.getMessage());
