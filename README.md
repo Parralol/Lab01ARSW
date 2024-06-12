@@ -81,27 +81,27 @@ And a acceptance test
 
 ### Break down into end to end tests
 
-* testSelectFiles_phy
+* **testSelectFiles_phy**
 
     This test allow us to assure that the selection of files in the phy case works, this will asure that the program reads the files accordingly. 
 
-* testSelectFiles_loc
+* **testSelectFiles_loc**
   
     This test allow us to assure that the selection of files in the loc case works, this will asure that the program reads the files accordingly. 
 
-* testSelectFiles_throwsExceptionForMultipleFiles
+* **testSelectFiles_throwsExceptionForMultipleFiles**
   
      This test allow us to assure that the selection of files in both cases works, this will asure that the program reads the files accordingly and only validates one file. 
 
-* testSelectFiles_throwsExceptionForNoFiles()
+* **testSelectFiles_throwsExceptionForNoFiles**
 
   This test allow us to assure that the selection of files in both cases works, this will asure that the program reads the files accordingly and will validate if no file exists.
 
-* testSelectFiles_throwsExceptionForInvalidArgument
+* **testSelectFiles_throwsExceptionForInvalidArgument**
 
   Validates if loc or phy is entered, if not it should raise an error.
 
-* testFileHasFourLOC
+* **testFileHasFourLOC**
 
   This test validates if the program calculates correctly the amount of lines of code.
 
