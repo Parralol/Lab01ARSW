@@ -17,17 +17,20 @@ public class Phy {
     public static String[] calculate(String name){
         ArrayList<String> res = new ArrayList<>();
         String[] a = {};
+        int count = 0;
         try{
             File file = new File(name);
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
                 String line = reader.nextLine();
+                if(line.equals("")) count +=1;
                 res.add(line);
             }
             reader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        res.add(Integer.toString(count));
         return res.toArray(a);
     }
 }

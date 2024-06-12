@@ -21,6 +21,7 @@ public class Loc {
          * @return String[]
          */
         public static String[] calculate(String name){
+            int count = 0;
             ArrayList<String> res = new ArrayList<>();
             String[] a = {};
             try{
@@ -30,12 +31,18 @@ public class Loc {
                     String line = reader.nextLine();
                     if(!line.equals(""))
                     line = analize(line);
-                    if(!javadoc) res.add(line);
+                    if(!javadoc){ 
+                        if(!line.equals("")){
+                            count +=1;
+                        }
+                        res.add(line);
+                    }
                 }
                 reader.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+            res.add(Integer.toString(count));
             return res.toArray(a);
     }
 

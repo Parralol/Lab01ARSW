@@ -16,8 +16,6 @@ public class Peticion {
     public Peticion(URL url){
         this.url = url;
         this.params = parseURLParameters(this.url);
-
-
     }
 
     ////comentario X
@@ -58,7 +56,6 @@ public class Peticion {
         }
         return paramMap;
     }
-
 
     public void printParams(){
         for (String key : params.keySet()) {

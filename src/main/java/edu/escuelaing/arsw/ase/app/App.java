@@ -19,7 +19,7 @@ public final class App {
     private App() {
     }
 
-    private static void selectFiles(String[] args) throws Exception{
+    public static void selectFiles(String[] args) throws Exception{
 
         for(Path a : allFiles){
             Path con = a.getFileName();
@@ -27,7 +27,6 @@ public final class App {
                 files.add(a.toString());
             }
         }
-        System.out.println(Arrays.toString(args));
         if(files.size()>1) throw new Exception("There is more than 1 file with the same name");
         if( files.size()<1)throw new Exception("There is no more than 1 file with the same name");
         if(args[0].equals("phy")){
@@ -44,7 +43,7 @@ public final class App {
      * @param args The arguments of the program.
      * @throws Exception 
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({ "rawtypes"})
     public static void main(String[] args) throws Exception {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String xd = System.getProperty("user.dir");
@@ -53,14 +52,15 @@ public final class App {
 
         selectFiles(args);
         
-        System.out.println("Found files:"); 
-        allFiles.forEach(System.out::println); 
+        //System.out.println("Found files:"); 
+        //allFiles.forEach(System.out::println); 
 
-        System.out.println("Found corresponding files:"); 
+        //System.out.println("Found corresponding files:"); 
         files.forEach(System.out::println); 
 
         List resp = Arrays.asList(res);
         System.out.println("Found file contents: \n"); 
-        resp.forEach(System.out::println);
+        //resp.forEach(System.out::println);
+        System.out.println("Lines of code found: " + resp.get(resp.size()-1));
     }
 }
