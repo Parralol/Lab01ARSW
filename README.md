@@ -108,10 +108,15 @@ And a acceptance test
 
 ### Acceptance test
 
-this acceptance test is build around the following file which you can see here -> 
+this acceptance test is build around the following file which you can see here -> [file used](https://github.com/Parralol/Lab01ARSW/blob/main/Test%20set/xd/Peticion.java)
 
 ![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/68b6b00b-53b8-4777-82ca-6a50336696eb)
 
+we proceed to test the phy option, once entered we get:
+
+![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/e7cddf61-d381-4075-9528-a2d5a32d69ae)
+
+the corresponding answer.
 
 ## Deployment
 
