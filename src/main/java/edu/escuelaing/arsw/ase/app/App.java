@@ -19,6 +19,11 @@ public final class App {
     private App() {
     }
 
+    /**
+     * Selects files in the current directory
+     * @param args
+     * @throws Exception
+     */
     public static void selectFiles(String[] args) throws Exception{
 
         for(Path a : allFiles){
