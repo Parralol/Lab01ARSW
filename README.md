@@ -68,7 +68,6 @@ java -jar path/to/your/target/LineCounter-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 ## Running the tests
-
 Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
@@ -88,6 +87,8 @@ Give an example
 ```
 
 ## Deployment
+
+**IN ORDER FOR THIS PROGRAM TO WORK, YOU'LL NEED TO EXECUTE THE PROGRAM ON THE FOLDER YOU WANT TO WORK WITH, WITH THE FILES YOU WANT TO WORK WITH**
 
 if you want to use te programm before using the package command we use
 
