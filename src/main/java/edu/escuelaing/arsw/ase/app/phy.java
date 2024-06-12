@@ -5,21 +5,29 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class phy {
-        public String[] calculate(String name){
-            ArrayList<String> res = new ArrayList<>();
-            String[] a = {};
-            try{
-                File file = new File(name);
-                Scanner reader = new Scanner(file);
-                while(reader.hasNextLine()){
-                    String line = reader.nextLine();
-                    res.add(line);
-                }
-                reader.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+/**
+ * Class made to deliver a entire file 
+ */
+public class Phy {
+    /**
+     * Method made to save a entire file as an array of string
+     * @param name
+     * @return String[]
+     */
+    public static String[] calculate(String name){
+        ArrayList<String> res = new ArrayList<>();
+        String[] a = {};
+        try{
+            File file = new File(name);
+            Scanner reader = new Scanner(file);
+            while(reader.hasNextLine()){
+                String line = reader.nextLine();
+                res.add(line);
             }
-            return res.toArray(a);
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return res.toArray(a);
     }
 }

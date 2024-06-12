@@ -4,10 +4,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
-public class loc {
+/**
+ * Class made to print out the lines of code without the comments and white lines
+ */
+public class Loc {
+        private static boolean javadoc;
+        private static Pattern jadoci = Pattern.compile("/\\\\*.*");
+        private static Pattern jadocf = Pattern.compile(".*\\\\*/"); 
+        private static Pattern comment = Pattern.compile("//.*"); 
 
-        public String[] calculate(String name){
+        /**
+         * Class made to process an entire file taking out the comments and saving it inside an Array of String
+         * @param name
+         * @return String[]
+         */
+        public static String[] calculate(String name){
             ArrayList<String> res = new ArrayList<>();
             String[] a = {};
             try{
@@ -15,12 +28,40 @@ public class loc {
                 Scanner reader = new Scanner(file);
                 while(reader.hasNextLine()){
                     String line = reader.nextLine();
-                    res.add(line);
+                    if(!line.equals(""))
+                    line = analize(line);
+                    if(!javadoc) res.add(line);
                 }
                 reader.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
             return res.toArray(a);
+    }
+
+    /**
+     * Method responsible for analizing each line
+     * @param line
+     * @return String
+     */ 
+    private static String analize(String line){
+        String[] salv = line.split(" ");
+        String res = "";
+        boolean commentb = false;
+        for(int i = 0 ; i < salv.length; i++){
+            String val = salv[i];
+           if(jadoci.matcher(val).matches() && val.charAt(1)!= '/'){ 
+                javadoc = true;
+            }else if(jadocf.matcher(val).matches() && val.charAt(0)!= '/'){ 
+                javadoc = false;
+            }else if(comment.matcher(val).matches() || commentb){ 
+                commentb = true;
+                res += "";
+
+            }else{
+                res += val + " ";
+            }
+        }
+        return res;
     }
 }

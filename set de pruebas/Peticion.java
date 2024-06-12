@@ -9,7 +9,10 @@ public class Peticion {
 
     private Map<String,String> params;
 
-
+/**
+ * prueba de javadoc
+ * @param url
+ */
     public Peticion(URL url){
         this.url = url;
         this.params = parseURLParameters(this.url);
@@ -17,7 +20,7 @@ public class Peticion {
 
     }
 
-
+    ////comentario X
     public String getParam(String parameter){
         return params.get(parameter);
     }
