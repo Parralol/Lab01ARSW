@@ -54,7 +54,11 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To execute the following program you will need to enter the following prompt in case you are not working with the JAR:
+
+```
+mvn -e exec:java -Dexec'.mainClass=edu.escuelaing.arsw.ase.app.App' -Dexec'.args=phy <file name>'
+```
 
 ## Built With
 
