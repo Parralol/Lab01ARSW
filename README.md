@@ -68,23 +68,50 @@ java -jar path/to/your/target/LineCounter-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 ## Running the tests
-Explain how to run the automated tests for this system
+
+To run the automated tests you'll have to type in the console 
+```
+mvn test
+```
+this program works with the following tests:
+
+![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/1b5c19d6-0f1d-43bf-b1f4-4fdb767c5844)
+
+And a acceptance test
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+* testSelectFiles_phy
 
-```
-Give an example
-```
+    This test allow us to assure that the selection of files in the phy case works, this will asure that the program reads the files accordingly. 
 
-### And coding style tests
+* testSelectFiles_loc
+  
+    This test allow us to assure that the selection of files in the loc case works, this will asure that the program reads the files accordingly. 
 
-Explain what these tests test and why
+* testSelectFiles_throwsExceptionForMultipleFiles
+  
+     This test allow us to assure that the selection of files in both cases works, this will asure that the program reads the files accordingly and only validates one file. 
 
-```
-Give an example
-```
+* testSelectFiles_throwsExceptionForNoFiles()
+
+  This test allow us to assure that the selection of files in both cases works, this will asure that the program reads the files accordingly and will validate if no file exists.
+
+* testSelectFiles_throwsExceptionForInvalidArgument
+
+  Validates if loc or phy is entered, if not it should raise an error.
+
+* testFileHasFourLOC
+
+  This test validates if the program calculates correctly the amount of lines of code.
+
+
+### Acceptance test
+
+this acceptance test is build around the following file which you can see here -> 
+
+![image](https://github.com/Parralol/Lab01ARSW/assets/110953563/68b6b00b-53b8-4777-82ca-6a50336696eb)
+
 
 ## Deployment
 
