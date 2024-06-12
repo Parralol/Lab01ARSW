@@ -1,6 +1,7 @@
-# Lab01 ARSW
+# Lab 01 ARSW
 
-This programm allow the user to count the number of lines of code of the file prompted in the terminal
+This programm allow the user to count the number of lines of code of the file prompted in the terminal, developed in 
+2024/06/12
 
 ## Getting Started
 
