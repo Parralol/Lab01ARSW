@@ -37,9 +37,12 @@ public final class App {
             }
         }
         if(files.size()>1) throw new Exception("There is more than 1 file with the same name");
+        
         System.out.println("Found files:"); 
         allFiles.forEach(System.out::println); 
 
+        System.out.println("Found corresponding files:"); 
+        files.forEach(System.out::println); 
 
     }
 }
