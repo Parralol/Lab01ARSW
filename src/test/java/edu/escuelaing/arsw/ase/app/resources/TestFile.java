@@ -24,9 +24,11 @@ public class TestFile {
      * @return
      * @throws IOException
      */
+    @SuppressWarnings("null")
     public String Invoke(String[] args) throws IOException {
         check();
-        URL obj = new URL(get_URL[instancia]);
+        //URL obj = new URL(get_URL[instancia]);
+        URL obj = null;
         System.out.println(obj.toString());
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
@@ -61,6 +63,7 @@ public class TestFile {
      * @throws IOException
      */
 
+    @SuppressWarnings("null")
     public List<String> getLog(String[] args) throws IOException{
         check();
         URL obj = null;
