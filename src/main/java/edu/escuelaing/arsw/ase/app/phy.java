@@ -23,7 +23,7 @@ public class Phy {
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
                 String line = reader.nextLine();
-                if(line.equals("")) count +=1;
+                count +=1;
                 res.add(line);
             }
             reader.close();
